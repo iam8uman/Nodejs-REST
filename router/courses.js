@@ -1,10 +1,14 @@
 const express = require("express");
 const router = express.Router();
-const schema = require("../models/courseModel");
+const schemaa = require("../models/courseModel");
 
+
+
+
+//get all courses
 router.get("/courses", async (req, res) => {
   try {
-    const data = await schema.find();
+    const data = await schemaa.find();
     res.json(data);
   } catch (error) {
     res.json(error);
@@ -24,17 +28,34 @@ router.get("/:courseId", async (req, res) => {
   }
 });
 
-//crate couse
+//crate course by post method
 
-router.post("/", async (req, res) => {
-  const course = await schema.create(res.body);
+router.post("/courses", async (req, res) => {
+  console.log(req.body)
+  const course = await schemaa.create(req.body);
+  console.log(course)
   res.json(course);
 });
 
-router.put("/courses", (req, res) => {
-  res.send(
+
+// update course 
+router.put("/courses", async (req, res) => {
+ res.send(
     "welcome, Here you can update your database as like you wanted to do . "
   );
 });
+
+// delete course 
+router.delete('/:courseId',async(req,res)=>{
+  try {
+    await schemaa.deleteOne({"_Id":req.params.courseId})
+
+  } catch (error) {
+    console.warn(error)
+  }
+})
+
+
+
 
 module.exports = router;
