@@ -16,3 +16,5 @@ openai.createChatCompletion({
 .then((res)=>{
     console.log(res.data.choices)
 })
+
+//here it shows error because i can't pay the bill for this api
