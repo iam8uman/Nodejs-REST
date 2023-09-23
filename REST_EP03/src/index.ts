@@ -8,10 +8,16 @@ import compression from "compression";
 const app=express();
 
 app.use(cors({
-    crendencials:true 
+    credentials:true 
 }))
 app.use(compression)
 app.use(bodyParser.json())
-app.use(cookieParser)
+app.use(cookieParser())
 
-// console.log("Hello world from typescript")
+const server=http.createServer(app);
+
+const PORT=8080;
+server.listen(PORT,()=>{
+    console.log(`Server Running in port:${PORT}`)
+})
+// console.log("Hello from typescript server")

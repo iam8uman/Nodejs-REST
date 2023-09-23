@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "module": "NodeNext",
-        "moduleResolution": "Node",
+        "moduleResolution": "NodeNext",
         "baseUrl": "src",
         "outDir": "dist",
         "sourceMap": true,
@@ -9,3 +9,18 @@
     },
     "include": ["src/**/*"]
 }
+
+// {
+//     "compilerOptions": {
+//       "target": "ES2020",         // Specify your target ECMAScript version
+//       "module": "CommonJS",       // Specify the module system you're using (CommonJS, ES6, etc.)
+//       "outDir": "./dist",         // Specify the output directory for compiled files
+//       "rootDir": "./src",         // Specify the root directory of your source files
+//       "strict": true,             // Enable strict type-checking
+//       "esModuleInterop": true,     // Allow default imports from ES modules
+//       "skipLibCheck": true,       // Skip type checking of declaration files
+//       "forceConsistentCasingInFileNames": true // Enforce consistent file casing
+//     },
+//     "include": ["src/**/*.ts"],  // Specify the files to include in compilation
+//     "exclude": ["node_modules"]  // Specify the files/directories to exclude from compilation
+//   }
